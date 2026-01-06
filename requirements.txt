@@ -1,0 +1,7 @@
+geopandas
+tabulate
+langchain_openai
+langchain_experimental
+
+
+

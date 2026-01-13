@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norwegian Landscape</title>
+    <title>Usynlige naboer</title>
     <style>
         * {
             margin: 0;
@@ -67,6 +67,16 @@
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
         }
 
         .header h1 {
@@ -285,8 +295,11 @@
     <!-- Main container -->
     <div class="container">
         <div class="header">
-            <h1>❄️ Norwegian Landscape AI</h1>
-            <p>Ask me about your geographic data</p>
+            <img src="/static/images/Usynlige naboer logo.png" alt="Logo" class="header-logo">
+            <div>
+                <h1>❄️ Norsk landskap</h1>
+                <p>Spør agenten vår Hubro om truede eller fremmede arter i Norge</p>
+            </div>
         </div>
 
         <div class="chat-box">

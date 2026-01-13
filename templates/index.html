@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-            height: 100vh;
+            overflow-x: hidden;
+            min-height: 100vh;
             background: linear-gradient(180deg, #e8f4f8 0%, #b8dfe8 40%, #a0c9d9 60%, #8fb5cc 100%);
             position: relative;
         }
@@ -55,11 +55,11 @@
             position: relative;
             z-index: 2;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             padding: 40px 20px;
+            gap: 30px;
         }
 
         .header {
@@ -95,13 +95,13 @@
         /* Chat window */
         .chat-box {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             display: flex;
             flex-direction: column;
-            height: 500px;
+            height: 400px;
             overflow: hidden;
             border: 2px solid rgba(255,255,255,0.3);
         }
@@ -264,6 +264,59 @@
             margin: 10px 0;
         }
 
+        /* Videos section */
+        .videos-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            width: 100%;
+        }
+
+        .videos-section h2 {
+            text-align: center;
+            color: #1a4d6d;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .video-card p {
+            padding: 12px;
+            text-align: center;
+            color: #333;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             .header h1 {
@@ -281,6 +334,14 @@
 
             .container {
                 padding: 20px 10px;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-section h2 {
+                font-size: 1.4em;
             }
         }
     </style>
@@ -322,6 +383,41 @@
                     autocomplete="off"
                 />
                 <button id="send-btn">Send</button>
+            </div>
+        </div>
+
+        <!-- Videos section -->
+        <div class="videos-section">
+            <h2>📹 Videoer</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="/static/videos/Snøugle i norsk natur 1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Snøugle i norsk natur 1</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/static/videos/Snøugle i norsk natur 2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Snøugle i norsk natur 2</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/static/videos/Snøugle i norsk natur 3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Snøugle i norsk natur 3</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/static/videos/Snøugle i norsk natur 4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Snøugle i norsk natur 4</p>
+                </div>
             </div>
         </div>
     </div>
